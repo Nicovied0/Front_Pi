@@ -1,0 +1,85 @@
+.containerdetailsdiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap;
+  align-content: center;
+  height: 100vh;
+  justify-content: center;
+}
+.containerLink button {
+  margin-bottom: 0.5rem;
+}
+.containerdiv {
+  background: #2d2d2d;
+  align-content: center;
+  padding: 3rem;
+  width: 30%;
+  display: flex;
+  height: 60%;
+  max-height: 80%;
+  border-radius: 4rem;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.containerdiv2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  padding: 0.5rem;
+  width: 30%;
+  height: 60%;
+  max-height: 80%;
+}
+.divInfo {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  height: 250px;
+  max-height: 250px;
+  max-width: 100%;
+}
+.Link{
+  color: #fff;
+  margin: 0;
+}
+.divActivitiesInfo{
+  margin: 0;
+}
+
+.divActivities{
+  margin: 1rem 0;
+}
+div h1 {
+  margin: 0.5rem 0rem;
+  font-size: 1.4em;
+}
+div h3 {
+  margin: 0.3rem;
+  font-size: 1em;
+}
+.img {
+  max-width: 100%;
+  height: 250px;
+  max-height: 250px;
+  border-radius: 1rem;
+}
+.divDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.button_home {
+  border-radius: 2rem;
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.button_home:hover {
+  background-color: #555555;
+  color: white;
+  cursor: pointer;
+}
