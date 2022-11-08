@@ -1,11 +1,11 @@
 import axios from 'axios';
-import {URLBACK, GET_ACTIVITIES, GET_COUNTRIES, GET_DETAILS, POST_ACTIVITIES, SEARCH_COUNTRIES, ORDER_BY_NAME, ORDER_BY_POPULATION, FILTER_BY_CONTINENT, FILTER_BY_ACTIVITIES } from '../../Const/Const'
+import { GET_ACTIVITIES, GET_COUNTRIES, GET_DETAILS, POST_ACTIVITIES, SEARCH_COUNTRIES, ORDER_BY_NAME, ORDER_BY_POPULATION, FILTER_BY_CONTINENT, FILTER_BY_ACTIVITIES } from '../../Const/Const'
 
 
 export function getCountries() {
     return async function (dispatch) {
         try {
-            let json = await axios.get(`${URLBACK}/countries`)
+            let json = await axios.get('http://localhost:3001/countries')
             return dispatch({
                 type: GET_COUNTRIES,
                 payload: json.data
@@ -20,7 +20,7 @@ export function getCountries() {
 export function getDetails(id) {
     return async function (dispatch) {
         try {
-            let json = await axios.get(`${URLBACK}/countries/` + id)
+            let json = await axios.get('http://localhost:3001/countries/' + id)
             return dispatch({
                 type: GET_DETAILS,
                 payload: json.data
@@ -36,7 +36,7 @@ export function getDetails(id) {
 export function getCountriesByName(search) {
     return async function (dispatch) {
         try {
-            let json = await axios.get(`${URLBACK}/countries?name=` + search)
+            let json = await axios.get('http://localhost:3001/countries?name=' + search)
             return dispatch({
                 type: SEARCH_COUNTRIES,
                 payload: json.data
@@ -79,7 +79,7 @@ export function filterByActivity(payload) {
 export function getActivities() {
     return async function (dispatch) {
         try {
-            let json = await axios.get(`${URLBACK}/activities`)
+            let json = await axios.get('http://localhost:3001/activities')
             return dispatch({
                 type: GET_ACTIVITIES,
                 payload: json.data
@@ -94,7 +94,7 @@ export function getActivities() {
 export function postActivities(payload) {
     return async function (dispatch) {
         try {
-            await axios.post(`${URLBACK}/activities`, payload)
+            await axios.post('http://localhost:3001/activities/', payload)
             return dispatch({
                 type: POST_ACTIVITIES,
             })
