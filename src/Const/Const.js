@@ -37,3 +37,4 @@ export const SPRING = 'SPRING'
 
 //Reset state
 export const RESET = 'RESET'
+export const BACK_CONECT = 'https://pi-countries-nico.herokuapp.com'
