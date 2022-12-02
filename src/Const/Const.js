@@ -38,3 +38,22 @@ export const SPRING = 'SPRING'
 //Reset state
 export const RESET = 'RESET'
 export const BACK_CONECT = 'https://backpi-production.up.railway.app'
+
+
+
+
+//ADICIONAL FILTERS AND ORDERS
+export const MIN_TO = 'MIN_TO'
+export const MAX_TO = 'MAX_TO'
+//
+export const ORDER_BY_AREA = 'ORDER_BY_AREA'
+export const MAX_AREA = 'MAX_AREA'
+export const MIN_AREA = 'MIN_AREA'
+
+export const RESET_COUNTRIES = "RESET_COUNTRIES"
+export const NEXT = "NEXT"
+export const PREVIUS = "PREVIUS"
+
+export const RESET_PAGE = "RESET_PAGE";
+export const PAGE_BACK = "PAGE_BACK";
+export const RESET_PAGE_POST = "RESET_PAGE_POST";

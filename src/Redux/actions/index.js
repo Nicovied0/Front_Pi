@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { BACK_CONECT, GET_ACTIVITIES, GET_COUNTRIES, GET_DETAILS, POST_ACTIVITIES, SEARCH_COUNTRIES, ORDER_BY_NAME, ORDER_BY_POPULATION, FILTER_BY_CONTINENT, FILTER_BY_ACTIVITIES } from '../../Const/Const'
+import { BACK_CONECT, RESET_PAGE, RESET_COUNTRIES, GET_ACTIVITIES, ORDER_BY_AREA, GET_COUNTRIES, GET_DETAILS, CLEAR_DETAILS, POST_ACTIVITIES, SEARCH_COUNTRIES, ORDER_BY_NAME, ORDER_BY_POPULATION, FILTER_BY_CONTINENT, FILTER_BY_ACTIVITIES, MAX_TO, RESET_PAGE_POST, PAGE_BACK } from '../../Const/Const'
 
 
 export function getCountries() {
@@ -20,7 +20,7 @@ export function getCountries() {
 export function getDetails(id) {
     return async function (dispatch) {
         try {
-            let json = await axios.get(BACK_CONECT +'/countries/' + id)
+            let json = await axios.get(BACK_CONECT + '/countries/' + id)
             return dispatch({
                 type: GET_DETAILS,
                 payload: json.data
@@ -33,6 +33,13 @@ export function getDetails(id) {
     }
 }
 
+export function clearDetails() {
+    return ({
+        type: CLEAR_DETAILS,
+    })
+}
+
+
 export function getCountriesByName(search) {
     return async function (dispatch) {
         try {
@@ -43,6 +50,11 @@ export function getCountriesByName(search) {
             })
         } catch {
             alert(`No country was found that includes "${search}".`)
+            let json = await axios.get(BACK_CONECT +'/countries')
+            return dispatch({
+                type: GET_COUNTRIES,
+                payload: json.data
+            });
         }
     }
 
@@ -61,6 +73,13 @@ export function orderByPopulation(payload) {
         payload
     }
 }
+export function orderByArea(payload) {
+    return {
+        type: ORDER_BY_AREA,
+        payload
+    }
+}
+
 
 export function filterByContinent(payload) {
     return {
@@ -102,5 +121,34 @@ export function postActivities(payload) {
         } catch {
             console.log('Error in post activities')
         }
+    }
+}
+export function filterMaxTo(payload) {
+    return {
+        type: MAX_TO,
+        payload
+    }
+}
+export function resetCountries() {
+    return {
+        type: RESET_COUNTRIES,
+    }
+}
+
+export function resetPage() {
+    return {
+        type: RESET_PAGE
+    }
+}
+export function resetPagePost() {
+    return {
+        type: RESET_PAGE_POST
+    }
+}
+
+export function pageBack(payload) {
+    return {
+        type: PAGE_BACK,
+        payload
     }
 }
