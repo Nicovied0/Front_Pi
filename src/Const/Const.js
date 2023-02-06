@@ -38,7 +38,7 @@ export const SPRING = 'SPRING'
 
 //Reset state
 export const RESET = 'RESET'
-export const BACK_CONECT = 'https://back-production-3dff.up.railway.app'
+export const BACK_CONECT = 'https://back-production-3dff.up.railway.app' 
 
 
 
