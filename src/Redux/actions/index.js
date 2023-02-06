@@ -5,8 +5,7 @@ import { BACK_CONECT, RESET_PAGE, RESET_COUNTRIES, GET_ACTIVITIES, ORDER_BY_AREA
 export function getCountries() {
     return async function (dispatch) {
         try {
-            console.log(BACK_CONECT,"soy el bacj")
-            let json = await axios.get('https://back-production-3dff.up.railway.app/countries')
+            let json = await axios.get(BACK_CONECT + '/countries')
             return dispatch({
                 type: GET_COUNTRIES,
                 payload: json.data
@@ -99,7 +98,7 @@ export function filterByActivity(payload) {
 export function getActivities() {
     return async function (dispatch) {
         try {
-            let json = await axios.get('https://back-production-3dff.up.railway.app/activities')
+            let json = await axios.get(BACK_CONECT + '/activities')
             return dispatch({
                 type: GET_ACTIVITIES,
                 payload: json.data
