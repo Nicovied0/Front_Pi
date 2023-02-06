@@ -99,7 +99,7 @@ export function filterByActivity(payload) {
 export function getActivities() {
     return async function (dispatch) {
         try {
-            let json = await axios.get(BACK_CONECT + '/activities')
+            let json = await axios.get('https://back-production-3dff.up.railway.app/activities')
             return dispatch({
                 type: GET_ACTIVITIES,
                 payload: json.data
